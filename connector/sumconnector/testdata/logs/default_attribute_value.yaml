@@ -1,12 +1,5 @@
 resourceMetrics:
-  - resource:
-      attributes:
-        - key: resource.required
-          value:
-            stringValue: foo
-        - key: resource.optional
-          value:
-            stringValue: bar
+  - resource: {}
     scopeMetrics:
       - metrics:
           - description: Log sum by attribute with default
@@ -14,77 +7,35 @@ resourceMetrics:
             sum:
               aggregationTemporality: 1
               dataPoints:
-                - asDouble: "4.2"
+                - asDouble: 2.1
                   attributes:
-                    - key: log.required
-                      value:
-                        stringValue: foo
                     - key: log.optional
                       value:
                         stringValue: bar
-                  timeUnixNano: "1678390948398365000"
-                - asDouble: "0"
-                  attributes:
                     - key: log.required
                       value:
                         stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 2
+                  attributes:
                     - key: log.optional
                       value:
                         stringValue: notbar
-                  timeUnixNano: "1678390948398365000"
-                - asDouble: "4"
-                  attributes:
-                    - key: log.required
-                      value:
-                        stringValue: notfoo
-                    - key: log.optional
-                      value:
-                        stringValue: other
-                  timeUnixNano: "1678390948398365000"
-              isMonotonic: true
-  - resource:
-      attributes:
-        - key: resource.required
-          value:
-            stringValue: foo
-        - key: resource.optional
-          value:
-            stringValue: notbar
-    scopeMetrics:
-      - metrics:
-          - description: Log sum by attribute with default
-            name: log.sum.by_attr
-            sum:
-              aggregationTemporality: 1
-              dataPoints:
-                - asDouble: "4.2"
-                  attributes:
                     - key: log.required
                       value:
                         stringValue: foo
-                    - key: log.optional
-                      value:
-                        stringValue: bar
-                  timeUnixNano: "1678390948398368000"
-                - asDouble: "4"
+                  timeUnixNano: "1000000"
+                - asDouble: 2
                   attributes:
-                    - key: log.required
-                      value:
-                        stringValue: foo
-                    - key: log.optional
-                      value:
-                        stringValue: notbar
-                  timeUnixNano: "1678390948398368000"
-                - asDouble: "4"
-                  attributes:
-                    - key: log.required
-                      value:
-                        stringValue: notfoo
                     - key: log.optional
                       value:
                         stringValue: other
-                  timeUnixNano: "1678390948398368000"
+                    - key: log.required
+                      value:
+                        stringValue: notfoo
+                  timeUnixNano: "1000000"
               isMonotonic: true
+        scope: {}
   - resource:
       attributes:
         - key: resource.required
@@ -97,35 +48,43 @@ resourceMetrics:
             sum:
               aggregationTemporality: 1
               dataPoints:
-                - asDouble: "4.2"
+                - asDouble: 2.1
                   attributes:
-                    - key: log.required
-                      value:
-                        stringValue: foo
                     - key: log.optional
                       value:
                         stringValue: bar
-                  timeUnixNano: "1678390948398371000"
-                - asDouble: "4"
-                  attributes:
                     - key: log.required
                       value:
                         stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 2
+                  attributes:
                     - key: log.optional
                       value:
                         stringValue: notbar
-                  timeUnixNano: "1678390948398371000"
-                - asDouble: "4"
-                  attributes:
                     - key: log.required
                       value:
-                        stringValue: notfoo
+                        stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 2
+                  attributes:
                     - key: log.optional
                       value:
                         stringValue: other
-                  timeUnixNano: "1678390948398371000"
+                    - key: log.required
+                      value:
+                        stringValue: notfoo
+                  timeUnixNano: "1000000"
               isMonotonic: true
-  - resource: {}
+        scope: {}
+  - resource:
+      attributes:
+        - key: resource.optional
+          value:
+            stringValue: bar
+        - key: resource.required
+          value:
+            stringValue: foo
     scopeMetrics:
       - metrics:
           - description: Log sum by attribute with default
@@ -133,31 +92,76 @@ resourceMetrics:
             sum:
               aggregationTemporality: 1
               dataPoints:
-                - asDouble: "4.2"
+                - asDouble: 2.1
                   attributes:
-                    - key: log.required
-                      value:
-                        stringValue: foo
                     - key: log.optional
                       value:
                         stringValue: bar
-                  timeUnixNano: "1678390948398373000"
-                - asDouble: "4"
-                  attributes:
                     - key: log.required
                       value:
                         stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 0
+                  attributes:
                     - key: log.optional
                       value:
                         stringValue: notbar
-                  timeUnixNano: "1678390948398373000"
-                - asDouble: "4"
-                  attributes:
                     - key: log.required
                       value:
-                        stringValue: notfoo
+                        stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 2
+                  attributes:
                     - key: log.optional
                       value:
                         stringValue: other
-                  timeUnixNano: "1678390948398373000"
+                    - key: log.required
+                      value:
+                        stringValue: notfoo
+                  timeUnixNano: "1000000"
               isMonotonic: true
+        scope: {}
+  - resource:
+      attributes:
+        - key: resource.optional
+          value:
+            stringValue: notbar
+        - key: resource.required
+          value:
+            stringValue: foo
+    scopeMetrics:
+      - metrics:
+          - description: Log sum by attribute with default
+            name: log.sum.by_attr
+            sum:
+              aggregationTemporality: 1
+              dataPoints:
+                - asDouble: 2.1
+                  attributes:
+                    - key: log.optional
+                      value:
+                        stringValue: bar
+                    - key: log.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 2
+                  attributes:
+                    - key: log.optional
+                      value:
+                        stringValue: notbar
+                    - key: log.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 2
+                  attributes:
+                    - key: log.optional
+                      value:
+                        stringValue: other
+                    - key: log.required
+                      value:
+                        stringValue: notfoo
+                  timeUnixNano: "1000000"
+              isMonotonic: true
+        scope: {}

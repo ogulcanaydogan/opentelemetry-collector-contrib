@@ -1,0 +1,13 @@
+change_type: bug_fix
+
+component: connector/sum
+
+note: Stop multiplying each summed value by the number of configured attributes
+
+issues: [49693]
+
+subtext: |
+  When one or more attributes were configured for a sum, the connector added each matching value
+  once per attribute instead of once per data point, so the reported sum was multiplied by the
+  number of attributes (for example, doubled with two attributes). Values are now summed once per
+  data point.

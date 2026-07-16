@@ -1,12 +1,5 @@
 resourceMetrics:
-  - resource:
-      attributes:
-        - key: resource.required
-          value:
-            stringValue: foo
-        - key: resource.optional
-          value:
-            stringValue: bar
+  - resource: {}
     scopeMetrics:
       - metrics:
           - description: Span sum by attributes
@@ -14,109 +7,50 @@ resourceMetrics:
             sum:
               aggregationTemporality: 1
               dataPoints:
-                - asDouble: "6"
+                - asDouble: 2.1
                   attributes:
-                    - key: span.required
-                      value:
-                        stringValue: foo
-                    - key: span.optional
-                      value:
-                        stringValue: notbar
-                  timeUnixNano: "1678392127926637000"
-                - asDouble: "4.2"
-                  attributes:
-                    - key: span.required
-                      value:
-                        stringValue: foo
                     - key: span.optional
                       value:
                         stringValue: bar
-                  timeUnixNano: "1678392127926637000"
+                    - key: span.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 3
+                  attributes:
+                    - key: span.optional
+                      value:
+                        stringValue: notbar
+                    - key: span.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
               isMonotonic: true
           - description: Span event sum by attributes
             name: spanevent.sum.by_attr
             sum:
               aggregationTemporality: 1
               dataPoints:
-                - asDouble: "14.6"
+                - asDouble: 7
                   attributes:
-                    - key: event.required
-                      value:
-                        stringValue: foo
                     - key: event.optional
                       value:
                         stringValue: bar
-                  timeUnixNano: "1678392127926637000"
-                - asDouble: "16.6"
-                  attributes:
                     - key: event.required
                       value:
                         stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 8
+                  attributes:
                     - key: event.optional
                       value:
                         stringValue: notbar
-                  timeUnixNano: "1678392127926637000"
-              isMonotonic: true
-
-  - resource:
-      attributes:
-        - key: resource.required
-          value:
-            stringValue: foo
-        - key: resource.optional
-          value:
-            stringValue: notbar
-    scopeMetrics:
-      - metrics:
-          - description: Span sum by attributes
-            name: span.sum.by_attr
-            sum:
-              aggregationTemporality: 1
-              dataPoints:
-                - asDouble: "4.2"
-                  attributes:
-                    - key: span.required
-                      value:
-                        stringValue: foo
-                    - key: span.optional
-                      value:
-                        stringValue: bar
-                  timeUnixNano: "1678392127926647000"
-                - asDouble: "6"
-                  attributes:
-                    - key: span.required
-                      value:
-                        stringValue: foo
-                    - key: span.optional
-                      value:
-                        stringValue: notbar
-                  timeUnixNano: "1678392127926647000"
-              isMonotonic: true
-          - description: Span event sum by attributes
-            name: spanevent.sum.by_attr
-            sum:
-              aggregationTemporality: 1
-              dataPoints:
-                - asDouble: "14.2"
-                  attributes:
                     - key: event.required
                       value:
                         stringValue: foo
-                    - key: event.optional
-                      value:
-                        stringValue: bar
-                  timeUnixNano: "1678392127926647000"
-                - asDouble: "16.2"
-                  attributes:
-                    - key: event.required
-                      value:
-                        stringValue: foo
-                    - key: event.optional
-                      value:
-                        stringValue: notbar
-                  timeUnixNano: "1678392127926647000"
+                  timeUnixNano: "1000000"
               isMonotonic: true
-
+        scope: {}
   - resource:
       attributes:
         - key: resource.required
@@ -129,51 +63,58 @@ resourceMetrics:
             sum:
               aggregationTemporality: 1
               dataPoints:
-                - asDouble: "4.2"
+                - asDouble: 2.1
                   attributes:
-                    - key: span.required
-                      value:
-                        stringValue: foo
                     - key: span.optional
                       value:
                         stringValue: bar
-                  timeUnixNano: "1678392127926654000"
-                - asDouble: "6"
-                  attributes:
                     - key: span.required
                       value:
                         stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 3
+                  attributes:
                     - key: span.optional
                       value:
                         stringValue: notbar
-                  timeUnixNano: "1678392127926654000"
+                    - key: span.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
               isMonotonic: true
           - description: Span event sum by attributes
             name: spanevent.sum.by_attr
             sum:
               aggregationTemporality: 1
               dataPoints:
-                - asDouble: "14"
+                - asDouble: 7
                   attributes:
-                    - key: event.required
-                      value:
-                        stringValue: foo
                     - key: event.optional
                       value:
                         stringValue: bar
-                  timeUnixNano: "1678392127926654000"
-                - asDouble: "16"
-                  attributes:
                     - key: event.required
                       value:
                         stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 8
+                  attributes:
                     - key: event.optional
                       value:
                         stringValue: notbar
-                  timeUnixNano: "1678392127926654000"
+                    - key: event.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
               isMonotonic: true
-
-  - resource: {}
+        scope: {}
+  - resource:
+      attributes:
+        - key: resource.optional
+          value:
+            stringValue: bar
+        - key: resource.required
+          value:
+            stringValue: foo
     scopeMetrics:
       - metrics:
           - description: Span sum by attributes
@@ -181,47 +122,106 @@ resourceMetrics:
             sum:
               aggregationTemporality: 1
               dataPoints:
-                - asDouble: "4.2"
+                - asDouble: 2.1
                   attributes:
-                    - key: span.required
-                      value:
-                        stringValue: foo
                     - key: span.optional
                       value:
                         stringValue: bar
-                  timeUnixNano: "1678392127926661000"
-                - asDouble: "6"
-                  attributes:
                     - key: span.required
                       value:
                         stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 3
+                  attributes:
                     - key: span.optional
                       value:
                         stringValue: notbar
-                  timeUnixNano: "1678392127926661000"
+                    - key: span.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
               isMonotonic: true
           - description: Span event sum by attributes
             name: spanevent.sum.by_attr
             sum:
               aggregationTemporality: 1
               dataPoints:
-                - asDouble: "14"
+                - asDouble: 7.299999999999999
                   attributes:
-                    - key: event.required
-                      value:
-                        stringValue: foo
                     - key: event.optional
                       value:
                         stringValue: bar
-                  timeUnixNano: "1678392127926661000"
-                - asDouble: "16"
-                  attributes:
                     - key: event.required
                       value:
                         stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 8.299999999999999
+                  attributes:
                     - key: event.optional
                       value:
                         stringValue: notbar
-                  timeUnixNano: "1678392127926661000"
+                    - key: event.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
               isMonotonic: true
-
+        scope: {}
+  - resource:
+      attributes:
+        - key: resource.optional
+          value:
+            stringValue: notbar
+        - key: resource.required
+          value:
+            stringValue: foo
+    scopeMetrics:
+      - metrics:
+          - description: Span sum by attributes
+            name: span.sum.by_attr
+            sum:
+              aggregationTemporality: 1
+              dataPoints:
+                - asDouble: 2.1
+                  attributes:
+                    - key: span.optional
+                      value:
+                        stringValue: bar
+                    - key: span.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 3
+                  attributes:
+                    - key: span.optional
+                      value:
+                        stringValue: notbar
+                    - key: span.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
+              isMonotonic: true
+          - description: Span event sum by attributes
+            name: spanevent.sum.by_attr
+            sum:
+              aggregationTemporality: 1
+              dataPoints:
+                - asDouble: 7.1
+                  attributes:
+                    - key: event.optional
+                      value:
+                        stringValue: bar
+                    - key: event.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
+                - asDouble: 8.1
+                  attributes:
+                    - key: event.optional
+                      value:
+                        stringValue: notbar
+                    - key: event.required
+                      value:
+                        stringValue: foo
+                  timeUnixNano: "1000000"
+              isMonotonic: true
+        scope: {}

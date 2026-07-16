@@ -119,15 +119,7 @@ func (c *summer[K]) increment(metricName string, sumVal float64, attrs pcommon.M
 		c.sums[metricName][key] = &attrSummer{attrs: attrs}
 	}
 
-	for strings := range c.sums[metricName][key].attrs.AsRaw() {
-		if _, ok := c.sums[metricName][key].attrs.Get(strings); ok {
-			c.sums[metricName][key].sum += sumVal
-		}
-	}
-
-	if attrs.Len() == 0 {
-		c.sums[metricName][key].sum += sumVal
-	}
+	c.sums[metricName][key].sum += sumVal
 
 	return nil
 }
